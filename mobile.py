@@ -1,4 +1,4 @@
-class Mobile(object):
+class Mobile:
     """OOP concepts theoretically linking it with real world and programming world, taking Mobile as an object.
     A Mobile has the following the properties:
 
@@ -9,13 +9,35 @@ class Mobile(object):
     os: a string representing operating system of the mobile device
 
     functionality:
-
-
     """
 
-    def __init__(self, name, imeiCode, model, simCard, os):
+    def __init__(self, name, imeiCode, model, simCard='NanoSim', os):
         self.name = name
         self.imeiCode = imeiCode
         self.model = model
         self.simCard = simCard
         self.os = os
+
+class Nokia(Mobile):
+    #Class Nokia extends class Mobile
+    def __init__(self, name, imeiCode, model, simCard, os, browser):
+        #Reusing the super class method[Mobile] by the child
+        Mobile.__init__(name, imeiCode, model, simCard='Microsim', os='Nougat')
+        self.browser = browser
+
+    def has_browser(self):
+        #Method to determine weather object nokia has_browser
+        if self.browser == 'html5':
+            return True
+        elif self.browser == 'none':
+            return False
+        return False
+
+    def is_smartphone(self):
+        if self.browser == 'html5':
+            return '{} model {} is a smartphone'.format(self.name, self.model)
+        elif self.browser == 'none':
+            return '{} model {} is a basic phone'.format(self.name, self.model)
+
+class Samsung(Mobile):
+    pass
