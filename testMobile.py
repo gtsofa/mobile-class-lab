@@ -10,7 +10,7 @@ class TestMobile(unittest.TestCase):
         self.assertIsInstance(mobile, Mobile, msg='The object should be an instance of a Mobile class')
 
     def test_samsung_isinstance(self):
-        sams = Samsung('Samsung', 'CEGF34343476210', 'SamsungGalaxyS8', 'NanoSim', 'Android7')
+        samsung = Samsung('Samsung', 'CEGF34343476210', 'SamsungGalaxyS8', 'NanoSim', 'Android7')
         self.assertIsInstance(samsung, Samsung, msg='The object should be an instance of a Samsung class')
 
     def test_nokia_isinstance(self):
