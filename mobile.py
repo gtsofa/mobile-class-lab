@@ -11,6 +11,7 @@ class Mobile:
     functionality:
     """
 
+    #if one arg is assigned all args need to be assigned as well that's why use None
     def __init__(self, name=None, imeiCode=None, model=None, simCard='NanoSim', os=None):
         self.name = name
         self.imeiCode = imeiCode
@@ -19,6 +20,11 @@ class Mobile:
         self.os = os
 
 class Nokia(Mobile):
+    """Nokia class implementation
+    Attributes:
+        browser = a string representing the type of a browser the Nokia phone has; which will be used to test if it's a smartphone or just a basic phone
+        
+    """
     #Class Nokia extends class Mobile
     def __init__(self, name=None, imeiCode=None, model=None, simCard='NanoSim', os=None, browser=None):
         #Reusing the super class method[Mobile] by the child
