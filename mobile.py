@@ -44,6 +44,21 @@ class Nokia(Mobile):
             return '{} model {} is a smartphone'.format(self.name, self.model)
         elif self.browser == 'none':
             return '{} model {} is a basic phone'.format(self.name, self.model)
+            
+    def cameraClick(self):
+        #Function that shows camera functionality
+        return 'Camera clicked!'
 
 class Samsung(Mobile):
-    pass
+    """class Samsung extends Mobile class functionality and adds its own attributes and functions.
+    Attributes:
+    cameraMode: A string representing the camera mode
+        
+    """
+    def __init__(self, name=None, imeiCode=None, model=None, simCard=None, os=None, browser=None, cameraMode='Panaroma'):
+        super(Samsung, self).__init__(name, imeiCode, model, simCard=None, os=None)
+        self.cameraMode = cameraMode
+        
+     #This is one overloaded method which shows camera functionality as well but with its camera's different mode(panaroma)     
+    def cameraClick(self, cameraMode):
+        return "Camera clicked in {} cameraMode".format(self.cameraMode)
